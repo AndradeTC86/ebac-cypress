@@ -1,0 +1,29 @@
+{
+  "name": "ebac-cypress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open": "npx cypress open",
+    "cy:run": "npx cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndradeTC86/ebac-cypress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndradeTC86/ebac-cypress/issues"
+  },
+  "homepage": "https://github.com/AndradeTC86/ebac-cypress#readme",
+  "dependencies": {
+    "@faker-js/faker": "^6.0.0-alpha.7",
+    "cypress": "^9.5.0",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  }
+}

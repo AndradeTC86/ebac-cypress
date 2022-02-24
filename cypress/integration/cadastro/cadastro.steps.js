@@ -2,7 +2,7 @@
 
 import { Given, When, And, Then } from 'cypress-cucumber-preprocessor/steps'
 const { faker } = require('@faker-js/faker')
-const { loginPage, contaPage, enderecoPage } = require('../../support/page_objects')
+const { loginPage, enderecoPage } = require('../../support/page_objects')
 const dadosCadastro = require('../../fixtures/cadastro.json')
 const dadosEndereco = require('../../fixtures/endereco.json')
 
@@ -20,7 +20,7 @@ And('I click to complete the account details', () =>{
 })
 
 And('I click to complete the adress details', () =>{
-    enderecoPage.endereco(dadosCadastro.nome, dadosEndereco.sobrenome, dadosEndereco.empresa, dadosEndereco.pais,
+    enderecoPage.endereco(dadosEndereco.nome, dadosEndereco.sobrenome, dadosEndereco.empresa, dadosEndereco.pais,
     dadosEndereco.endereco, dadosEndereco.numero, dadosEndereco.cidade, dadosEndereco.estado, dadosEndereco.cep,
     dadosEndereco.telefone, dadosEndereco.email)
 })

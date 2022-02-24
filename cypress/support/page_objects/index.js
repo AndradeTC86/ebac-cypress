@@ -1,5 +1,5 @@
 import loginPage from './login.page'
-import contaPage from './conta.page'
 import enderecoPage from './endereco.page'
+import pedidosPage from './pedidos.page'
 
-export { loginPage, contaPage, enderecoPage } 
+export { loginPage, enderecoPage, pedidosPage } 

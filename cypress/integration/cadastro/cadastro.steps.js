@@ -10,9 +10,9 @@ Given('I acces the my account page', () =>{
     cy.visit('/minha-conta')
 })
 
-When('I register in with email {string} and senha {string}', (email, senha) =>{
+When('I register in with email {string} and senha {string}', () =>{
     let emailFaker = faker.internet.email();
-    loginPage.register(emailFaker, senha)
+    loginPage.register(emailFaker, dadosCadastro.senha)
 })
 
 And('I click to complete the account details', () =>{

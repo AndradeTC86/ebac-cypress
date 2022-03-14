@@ -13,8 +13,8 @@ Given('I acces the product page', () => {
 When('I add a product in the cart', () => {
     
     cy.intercept({
-        method: 'POST',
-        url: '/wp-admin/admin-ajax*',         
+        url: '/wp-admin/admin-ajax*',
+        method: 'POST',                 
     }, req => {
         if(req.headers.cookie.includes("woocommerce_items_in_cart=1")){
             req.reply({

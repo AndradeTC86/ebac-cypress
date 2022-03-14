@@ -1,8 +1,9 @@
 /// <reference types="cypress" />
 
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
-const { carrinhoPage, produtosPage } = require('../../support/page_objects')
+const { carrinhoPage } = require('../../support/page_objects')
 const dados = require('../../fixtures/prodIntercept.json')
+
 
 Given('I acces the product page', () => {
     cy.visit('/product/abominable-hoodie/')
@@ -10,6 +11,7 @@ Given('I acces the product page', () => {
 })
 
 When('I add a product in the cart', () => {
+    
     cy.intercept({
         method: 'POST',
         url: '/wp-admin/admin-ajax*',         
@@ -20,8 +22,10 @@ When('I add a product in the cart', () => {
                 body: dados.response
             })
         }        
-    })
-    
+    }).as('admin-ajax')
+
+    cy.wait('@admin-ajax').then(interception => console.log(interception))
+
     cy.intercept({
         method: 'POST',
         url: '/?wc-ajax=get_refreshed_fragments*',         
@@ -42,7 +46,8 @@ When('I add a product in the cart', () => {
           statusCode: 200,     
           body: htmlRespostaSubmit     
          })     
-       })    
+       })       
+      
 })
 
 Then('In the cart I must see the product', () => {

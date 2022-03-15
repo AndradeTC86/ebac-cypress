@@ -5,7 +5,6 @@ const { carrinhoPage, produtosPage } = require('../../support/page_objects')
 const dados = require('../../fixtures/prodIntercept.json')
 const produtos = require('../../fixtures/produtos.json')
 
-
 Given('I acces the product page', () => {
     cy.visit('/produtos')
 
@@ -14,7 +13,7 @@ Given('I acces the product page', () => {
 When('I add a product in the cart', () => {
     
     cy.intercept({
-        url: 'http://lojaebac.ebaconline.art.br/wp-admin/admin-ajax*',
+        url: '/wp-admin/admin-ajax*',
         method: 'POST',                 
     }, req => {
         if(req.headers.cookie.includes("woocommerce_items_in_cart=1")){
@@ -42,8 +41,8 @@ When('I add a product in the cart', () => {
         window.sessionStorage.setItem("wc_fragments_a84fb9b97c9e7516ea041e13a46d5c80", dados.html)     
         req.reply(     
          {     
-          statusCode: 200,     
-          body: htmlRespostaSubmit     
+            statusCode: 200,     
+            // body: dados.html     
          })     
        }).as('product')
 

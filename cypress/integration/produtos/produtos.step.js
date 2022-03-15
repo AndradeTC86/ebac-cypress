@@ -35,17 +35,17 @@ When('I add a product in the cart', () => {
             })
     }).as('fragments')
 
-    // cy.intercept({
-    //     method: 'POST',
-    //     url: '/product/abominable-hoodie/',         
-    // },  req => {
-    //     window.sessionStorage.setItem("wc_fragments_a84fb9b97c9e7516ea041e13a46d5c80", dados.html)     
-    //     req.reply(     
-    //      {     
-    //       statusCode: 200,     
-    //       body: htmlRespostaSubmit     
-    //      })     
-    //    }).as('product')
+    cy.intercept({
+        method: 'POST',
+        url: '/product/abominable-hoodie/',         
+    },  req => {
+        window.sessionStorage.setItem("wc_fragments_a84fb9b97c9e7516ea041e13a46d5c80", dados.html)     
+        req.reply(     
+         {     
+          statusCode: 200,     
+          body: htmlRespostaSubmit     
+         })     
+       }).as('product')
 
        produtosPage.inserirProduto(produtos[0].produto, produtos[0].tamanho,
         produtos[0].cor, produtos[0].quantidade)

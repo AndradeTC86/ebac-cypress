@@ -1,19 +1,20 @@
 /// <reference types="cypress" />
 
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
-const { carrinhoPage } = require('../../support/page_objects')
+const { carrinhoPage, produtosPage } = require('../../support/page_objects')
 const dados = require('../../fixtures/prodIntercept.json')
+const produtos = require('../../fixtures/produtos.json')
 
 
 Given('I acces the product page', () => {
-    cy.visit('/product/abominable-hoodie/')
+    cy.visit('/produtos')
 
 })
 
 When('I add a product in the cart', () => {
     
     cy.intercept({
-        url: '/wp-admin/admin-ajax*',
+        url: 'http://lojaebac.ebaconline.art.br/wp-admin/admin-ajax*',
         method: 'POST',                 
     }, req => {
         if(req.headers.cookie.includes("woocommerce_items_in_cart=1")){
@@ -22,9 +23,7 @@ When('I add a product in the cart', () => {
                 body: dados.response
             })
         }        
-    }).as('admin-ajax')
-
-    cy.wait('@admin-ajax').then(interception => console.log(interception))
+    }).as('admin-ajax') 
 
     cy.intercept({
         method: 'POST',
@@ -34,20 +33,22 @@ When('I add a product in the cart', () => {
                 statusCode: 200,
                 body: dados.html
             })
-    })
+    }).as('fragments')
 
-    cy.intercept({
-        method: 'POST',
-        url: '/product/abominable-hoodie/',         
-    },  req => {
-        window.sessionStorage.setItem("wc_fragments_a84fb9b97c9e7516ea041e13a46d5c80", dados.html)     
-        req.reply(     
-         {     
-          statusCode: 200,     
-          body: htmlRespostaSubmit     
-         })     
-       })       
-      
+    // cy.intercept({
+    //     method: 'POST',
+    //     url: '/product/abominable-hoodie/',         
+    // },  req => {
+    //     window.sessionStorage.setItem("wc_fragments_a84fb9b97c9e7516ea041e13a46d5c80", dados.html)     
+    //     req.reply(     
+    //      {     
+    //       statusCode: 200,     
+    //       body: htmlRespostaSubmit     
+    //      })     
+    //    }).as('product')
+
+       produtosPage.inserirProduto(produtos[0].produto, produtos[0].tamanho,
+        produtos[0].cor, produtos[0].quantidade)
 })
 
 Then('In the cart I must see the product', () => {

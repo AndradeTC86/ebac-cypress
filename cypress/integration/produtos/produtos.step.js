@@ -33,7 +33,7 @@ When('I add a product in the cart', () => {
                 body: dados.html
             })
     }).as('fragments')
-
+    
     cy.intercept({
         method: 'POST',
         url: '/product/abominable-hoodie/',         
@@ -42,11 +42,11 @@ When('I add a product in the cart', () => {
         req.reply(     
          {     
             statusCode: 200,     
-            // body: dados.html     
+            body: dados.html
          })     
        }).as('product')
 
-       produtosPage.inserirProduto(produtos[0].produto, produtos[0].tamanho,
+       produtosPage.inserirProduto(produtos[0].produto, produtos[0].tamanho, 
         produtos[0].cor, produtos[0].quantidade)
 })
 

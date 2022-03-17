@@ -1,4 +1,7 @@
 {
     "baseUrl": "http://lojaebac.ebaconline.art.br/",
-    "testFiles": "**/*.feature"
+    "testFiles": "**/*.feature",
+    "env": {
+        "allureResultsPath": "cypress/allure-reports"     
+    }
 }

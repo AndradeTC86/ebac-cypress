@@ -1,13 +1,20 @@
 /// <reference types="cypress" />
 
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
-const { carrinhoPage, produtosPage } = require('../../support/page_objects')
+const { produtosPage } = require('../../support/page_objects')
 const dados = require('../../fixtures/prodIntercept.json')
 const produtos = require('../../fixtures/produtos.json')
+let htmlResponse
+
+beforeEach(() => {
+    cy.readFile("cypress/downloads/add.html").then(html=>{
+      htmlResponse = html
+    })
+    cy.visit("/")
+  })
 
 Given('I acces the product page', () => {
     cy.visit('/produtos')
-
 })
 
 When('I add a product in the cart', () => {
@@ -42,7 +49,7 @@ When('I add a product in the cart', () => {
         req.reply(     
          {     
             statusCode: 200,     
-            body: dados.html
+            body: htmlResponse
          })     
        }).as('product')
 
@@ -51,7 +58,7 @@ When('I add a product in the cart', () => {
 })
 
 Then('In the cart I must see the product', () => {
-    cy.visit('http://lojaebac.ebaconline.art.br/carrinho/')
-    carrinhoPage.produto.should('contain', 'Abominable Hoodie - XS, Green')
+    produtosPage.clicarPreviewCarrinho()
+    produtosPage.PreviewCarrinho.should('contain', 'Abominable Hoodie - XS, Green')
 })
 

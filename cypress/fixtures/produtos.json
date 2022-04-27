@@ -1,8 +1,24 @@
+[{
+    "produto":"Abominable Hoodie",
+    "tamanho":"S",
+    "cor":"Red",
+    "quantidade":"2"
+},
 {
-  "size": "XS",
-  "color": "Green",
-  "quantity": 1,
-  "add_cart": 2559,
-  "product_id": 2559,
-  "variation_id": 2581
-}
+    "produto":"Atlas Fitness Tank",
+    "tamanho":"S",
+    "cor":"Blue",
+    "quantidade":"1"
+},
+{
+    "produto":"Aero Daily Fitness Tee",
+    "tamanho":"S",
+    "cor":"Black",
+    "quantidade":"2"
+},
+{
+    "produto":"Ajax Full-Zip Sweatshirt",
+    "tamanho":"M",
+    "cor":"Green",
+    "quantidade":"1"
+}]

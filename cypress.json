@@ -1,7 +1,12 @@
 {
     "baseUrl": "http://lojaebac.ebaconline.art.br/",
     "testFiles": "**/*.feature",
-    "env": {
-        "allureResultsPath": "cypress/allure-reports"     
+    "reporter": "mochawesome",
+    "reporterOptions": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "reportFilename": "index.html",
+        "html": true,
+        "json": false
     }
 }

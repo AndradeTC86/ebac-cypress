@@ -53,8 +53,8 @@ When('I add a product in the cart', () => {
          })     
        }).as('product')
 
-       produtosPage.inserirProduto(produtos[0].produto, produtos[0].tamanho, 
-        produtos[0].cor, produtos[0].quantidade)
+       produtosPage.inserirProduto(produtos[1].produto, produtos[1].tamanho, 
+        produtos[1].cor, produtos[1].quantidade)
 })
 
 Then('In the cart I must see the product', () => {

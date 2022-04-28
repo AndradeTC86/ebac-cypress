@@ -7,7 +7,7 @@ const dadosCadastro = require('../../fixtures/cadastro.json')
 const dadosEndereco = require('../../fixtures/endereco.json')
 
 Given('I acces the my account page', () =>{
-    cy.visit('/minha-conta')
+    cy.visit('minha-conta')
 })
 
 When('I register in with email {string} and senha {string}', () =>{

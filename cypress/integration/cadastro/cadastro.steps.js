@@ -6,7 +6,7 @@ const { loginPage, enderecoPage } = require('../../support/page_objects')
 const dadosCadastro = require('../../fixtures/cadastro.json')
 const dadosEndereco = require('../../fixtures/endereco.json')
 
-Given('I acces the my account page', () =>{
+Given('I access the my account page', () =>{
     cy.visit('/minha-conta')
 })
 

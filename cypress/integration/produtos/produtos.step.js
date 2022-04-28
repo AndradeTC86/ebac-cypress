@@ -13,7 +13,7 @@ beforeEach(() => {
     cy.visit("/")
   })
 
-Given('I acces the product page', () => {
+Given('I access the product page', () => {
     cy.visit('/produtos')
 })
 

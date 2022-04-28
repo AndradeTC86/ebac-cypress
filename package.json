@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run cy:run",
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
     "test:allure": "npx cypress run --env allure=true",

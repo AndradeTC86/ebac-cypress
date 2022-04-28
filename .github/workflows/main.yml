@@ -27,8 +27,8 @@ jobs:
       - name: Cypress run
       - uses: cypress-io/github-action@v2
       - uses: restqa/gherkin-linter-action@0.0.1
-        with:
-          continue-on-error: true        
+        continue-on-error: true
+        with:                  
           install-comand: npm install
           browser: chrome
       - name: Publish Report

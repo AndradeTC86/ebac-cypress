@@ -9,7 +9,7 @@
     "cy:report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json  > mochawesome-report/report.json && npx marge mochawesome-report/report.json",
     "test:allure": "npx cypress run --env allure=true",
     "allure:open": "npx allure serve",
-    "cy:dashboard": "cypress run --record --key <record-key>"
+    "cy:dashboard": "cypress run --record --key 43126ce0-c9eb-4314-8fa1-47d64e2ef869"
   },
   "repository": {
     "type": "git",

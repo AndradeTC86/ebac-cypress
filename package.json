@@ -8,7 +8,8 @@
     "cy:run": "npx cypress run",
     "cy:report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json  > mochawesome-report/report.json && npx marge mochawesome-report/report.json",
     "test:allure": "npx cypress run --env allure=true",
-    "allure:open": "npx allure serve"
+    "allure:open": "npx allure serve",
+    "cy:dashboard": ""
   },
   "repository": {
     "type": "git",

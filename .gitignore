@@ -103,14 +103,9 @@ dist
 # TernJS port file
 .tern-port
 
-<<<<<<< HEAD
-allure-reports/
-screenshots/
-videos/
-=======
 videos/
 screenshots/
 reports/
 allure-reports/
->>>>>>> 39d939a1a91c1b46a02d36e8cf1a77ed1cbb5f76
+allure-report/
 mochawesome-report/

@@ -1,4 +1,4 @@
-# ebac-cypress
+# Ebac Cypress
 
 # Automation Test Components with Cypress
 

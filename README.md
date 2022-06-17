@@ -17,7 +17,7 @@ This is the repository for automation of web projects, developed to work with Cy
 
 The goal of this repository is to be easy to understand focused on developing automated tests for Web, using [Cypress](https://www.cypress.io/), a tool developed in JavaScript language that provides speed, ease and reliability in the tests.
 
-The architecture developed for this project meets the need to centralize only a single BDD (Behavior Driven Development) separated by value stream that can be executed for any zone.
+The architecture developed for this project meets the need to centralize only a single BDD (Behavior Driven Development).
 
 This project can be executed in Chrome, Firefox and Edge browsers
 

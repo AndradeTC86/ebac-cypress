@@ -24,7 +24,7 @@ This project can be executed in Chrome, Firefox and Edge browsers
 ## Project Structure
 
 ```
-|--- .gtihub
+|--- .github
 |----- workflows
 |--- cypress
 |----- downloads

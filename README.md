@@ -27,7 +27,6 @@ This project can be executed in Chrome, Firefox and Edge browsers
 |--- .github
 |----- workflows
 |--- cypress
-|----- downloads
 |----- fixtures
 |----- integration
 |-------- cadastro
@@ -35,6 +34,7 @@ This project can be executed in Chrome, Firefox and Edge browsers
 |-------- checkout
 |-------- produtos
 |----- plugins
+|----- response
 |-------- index
 |----- support
 |-------- page_objects

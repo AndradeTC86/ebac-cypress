@@ -7,7 +7,7 @@ const produtos = require('../../fixtures/produtos.json')
 let htmlResponse
 
 beforeEach(() => {
-    cy.readFile("cypress/downloads/add.html").then(html=>{
+    cy.readFile("cypress/response/add.html").then(html=>{
       htmlResponse = html
     })
     cy.visit("/")

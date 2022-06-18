@@ -8,13 +8,13 @@ const dadosProdutos = require('../../fixtures/prodRequest.json')
 let htmlEdit, htmlRemove
 
 beforeEach(() => {
-    cy.readFile("cypress/downloads/edit.html").then(edit=>{
+    cy.readFile("cypress/response/edit.html").then(edit=>{
       htmlEdit = edit
     })    
   })
 
 beforeEach(() => {
-    cy.readFile("cypress/downloads/remove.html").then(remove=>{
+    cy.readFile("cypress/response/remove.html").then(remove=>{
       htmlRemove = remove
     })    
   })

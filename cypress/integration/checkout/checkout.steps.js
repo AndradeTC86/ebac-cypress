@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 
-import { addProduct, placeOrder } from '../../support/commands'
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 const { pedidosPage } = require('../../support/page_objects')
 const dadosProdutos = require('../../fixtures/prodRequest.json')
